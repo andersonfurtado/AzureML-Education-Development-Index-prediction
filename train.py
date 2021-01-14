@@ -7,19 +7,24 @@ from sklearn.metrics import r2_score
 import joblib
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from azureml.core.run import Run#1
 from azureml.core import Workspace
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
+from azureml.core.run import Run
+from azureml.core.datastore import datastore
 
+run = Run.get_context()
+ws = run.experiment.workspace
 
+# This is your code
+datastore_name='workspaceblobstore'
+datastore=Datastore.get(ws,ideb_dataset)
 
-# TODO: Create TabularDataset using TabularDatasetFactory
 ws = Workspace.from_config()
 data = ws.get_default_datastore()
 path = "data/Train.csv"
 try:
-    ideb_dataset = Dataset.get_by_name(ws, name="dataset2019ideb")
+    ideb_dataset = Dataset.get_by_name(ws, name="ideb_dataset")
 except:
     datastore.upload('data', target_path='data')
     # Create TabularDataset & register in workspace
@@ -28,9 +33,6 @@ except:
         ws, name="ideb_dataset", create_new_version=True,
         description="Dataset for ideb prediction"
     )
-
-
-run = Run.get_context()
 
 def clean_data(data):
    
