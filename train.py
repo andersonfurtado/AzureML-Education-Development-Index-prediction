@@ -8,10 +8,27 @@ import joblib
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from azureml.core.run import Run#1
+from azureml.core import Workspace
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 
+
+
 # TODO: Create TabularDataset using TabularDatasetFactory
+ws = Workspace.from_config()
+data = ws.get_default_datastore()
+path = "data/Train.csv"
+try:
+    ideb_dataset = Dataset.get_by_name(ws, name="dataset2019ideb")
+except:
+    datastore.upload('data', target_path='data')
+    # Create TabularDataset & register in workspace
+    ideb_dataset = Dataset.Tabular.from_delimited_files([(datastore, path)])
+    ideb_dataset = ideb_dataset.register(
+        ws, name="ideb_dataset", create_new_version=True,
+        description="Dataset for ideb prediction"
+    )
+
 
 run = Run.get_context()
 
@@ -23,12 +40,8 @@ def clean_data(data):
 
     return x_df,y_df
 
-# data = pd.read_csv("heart_failure_clinical_records_dataset.csv")
-data = "https://1drv.ms/t/s!ArTGNj9yTA8whfdDf4TPkQGzAl5Opg"
 
-ds = Dataset.Tabular.from_delimited_files(data)
-
-x, y = clean_data(ds)
+x, y = clean_data(ideb_dataset)
 
 # TODO: Split data into train and test sets.
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=403,shuffle=True) # 1 
