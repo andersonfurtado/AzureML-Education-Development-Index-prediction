@@ -11,28 +11,12 @@ from azureml.core import Workspace
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 from azureml.core.run import Run
-from azureml.core.datastore import datastore
+
 
 run = Run.get_context()
-ws = run.experiment.workspace
 
-# This is your code
-datastore_name='workspaceblobstore'
-datastore=Datastore.get(ws,ideb_dataset)
-
-ws = Workspace.from_config()
-data = ws.get_default_datastore()
-path = "data/Train.csv"
-try:
-    ideb_dataset = Dataset.get_by_name(ws, name="ideb_dataset")
-except:
-    datastore.upload('data', target_path='data')
-    # Create TabularDataset & register in workspace
-    ideb_dataset = Dataset.Tabular.from_delimited_files([(datastore, path)])
-    ideb_dataset = ideb_dataset.register(
-        ws, name="ideb_dataset", create_new_version=True,
-        description="Dataset for ideb prediction"
-    )
+url = 'https://github.com/andersonfurtado/Capstone/blob/master/data/data.CSV'
+dataset = TabularDatasetFactory.from_delimited_files(url)
 
 def clean_data(data):
    
