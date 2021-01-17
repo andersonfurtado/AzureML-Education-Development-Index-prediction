@@ -41,7 +41,7 @@ def main():
     parser.add_argument("--C", type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument("--max_iter", type=int, default=100, help="Maximum number of iterations to converge")
 
-    primary_metric_name='r2_score'
+    primary_metric_name='accuracy'
     args = parser.parse_args()
 
     run.log("Regularization Strength:", np.float(args.C))
@@ -53,6 +53,6 @@ def main():
     joblib.dump(model,'outputs/model.joblib')
     accuracy = model.score(x_test, y_test)
     
-    run.log('r2_score', np.float(r2_score))
+    run.log('Accuracy', np.float(accuracy))
 if __name__ == '__main__':
     main()
