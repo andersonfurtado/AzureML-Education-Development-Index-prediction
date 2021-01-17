@@ -41,7 +41,7 @@ def main():
     parser.add_argument("--C", type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument("--max_iter", type=int, default=100, help="Maximum number of iterations to converge")
 
-    primary_metric_name='accuracy'
+    primary_metric_name='Accuracy'
     args = parser.parse_args()
 
     run.log("Regularization Strength:", np.float(args.C))
