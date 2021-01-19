@@ -1,22 +1,29 @@
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.externals import joblib
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
+
 import argparse
 import os
 import numpy as np
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import r2_score
 import joblib
-from sklearn.model_selection import train_test_split
 import pandas as pd
+
 from azureml.core import Workspace
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 from azureml.core.run import Run
 
 
+
+
 run = Run.get_context()
 
 ideb_dataset = Dataset.Tabular.from_delimited_files("https://raw.githubusercontent.com/andersonfurtado/Capstone/master/data/data.CSV", separator=';', encoding= 'latin1')
 data = ideb_dataset.to_pandas_dataframe()
+
 
 def clean_data(data):
    
@@ -38,21 +45,24 @@ def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--C", type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
-    parser.add_argument("--max_iter", type=int, default=100, help="Maximum number of iterations to converge")
+    parser.add_argument("--fit_intercept", type=bool, default=True, help="Calculate the intercept for this model")
+    parser.add_argument("--n_jobs", type=int, default=None, help="The number of jobs to use for the computation.")
 
-    primary_metric_name='Accuracy'
+    #primary_metric_name='Accuracy'
     args = parser.parse_args()
 
-    run.log("Regularization Strength:", np.float(args.C))
-    run.log("Max iterations:", np.int(args.max_iter))
+    run.log("fit_intercept:", np.float(args.fit_intercept))
+    run.log("n_jobs:", np.int(args.n_jobs))
 
 
 
-    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
-    joblib.dump(model,'outputs/model.joblib')
-    accuracy = model.score(x_test, y_test)
+    model = LinearRegression(fit_intercept=args.fit_intercept, n_jobs=args.n_jobs).fit(x_train, y_train)
     
+    accuracy = model.score(x_test, y_test)
     run.log('Accuracy', np.float(accuracy))
+    os.makedirs('outputs', exist_ok=True)
+
+    joblib.dump(value=model, filename='outputs/model.pkl')
+    
 if __name__ == '__main__':
     main()
