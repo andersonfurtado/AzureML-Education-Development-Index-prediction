@@ -4,6 +4,8 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder
 
 import argparse
 import os
@@ -45,26 +47,41 @@ def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--min_impurity_decrease", type=float, default=0.0, help="A node will be split if this split induces a decrease of the impurity greater than or equal to this value.")
-    parser.add_argument("--min_samples_leaf", type=float, default=10, help="The minimum number of samples required to be at a leaf node.")
-    parser.add_argument("--min_weight_fraction_leaf", type=float, default=0.0, help="The minimum weighted fraction of the sum total of weights of all the input samples required to be at a leaf node.")
+    parser.add_argument('--max_depth',
+                        type=int,
+                        default=5,
+                        help="The maximum depth of the tree.")
+    parser.add_argument('--min_samples_split',
+                        type=int,
+                        default=2,
+                        help="The minimum number of samples required to split an internal node.")
+    parser.add_argument('--min_samples_leaf',
+                        type=int,
+                        default=1,
+                        help="The minimum number of samples required to be at a leaf node.")
+
 
     #primary_metric_name='Accuracy'
     args = parser.parse_args()
 
 
-    run.log("min_impurity_decrease:", np.int(args.min_impurity_decrease))
-    run.log("min_samples_leaf:", np.float(args.min_samples_leaf))
-    run.log("min_weight_fraction_leaf:", np.int(args.min_weight_fraction_leaf))
+    run.log("max_depth:", np.int(args.max_depth))   
+    run.log("min_samples_split:", np.int(args.min_samples_split))
+    run.log("min_samples_leaf:", np.int(args.min_samples_leaf))
 
 
+# Train Random Forest Model
+    model = RandomForestRegressor(
+                                   max_depth=args.max_depth,
+                                   min_samples_split=args.min_samples_split,
+                                   min_samples_leaf=args.min_samples_leaf).fit(x_train, y_train)
 
-    model = RandomForestRegressor(min_impurity_decrease=args.min_impurity_decrease, min_samples_leaf=args.min_samples_leaf, min_weight_fraction_leaf=args.min_weight_fraction_leaf).fit(x_train, y_train)
-    
+# calculate accuracy                                   
     accuracy = model.score(x_test, y_test)
     run.log('Accuracy', np.float(accuracy))
-    os.makedirs('outputs', exist_ok=True)
 
+# Save the trained model   
+    os.makedirs('outputs', exist_ok=True)
     joblib.dump(value=model, filename='outputs/model.pkl')
     
 if __name__ == '__main__':
