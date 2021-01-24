@@ -80,6 +80,11 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log('Accuracy', np.float(accuracy))
 
+# calculate r2 score
+    y_pred = model.predict(x_test)
+    r2 = r2_score(y_true, y_pred) # Notice that my variable is named r2 to avoid confusion with the r2_score we imported
+    run.log('r2_score', np.float(r2))
+
 # Save the trained model   
     os.makedirs('outputs', exist_ok=True)
     joblib.dump(value=model, filename='outputs/model.pkl')
