@@ -1,6 +1,29 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+# Prediction of the Basic Education Development Index (Ideb) in Brazil with Azure Machine Learning
 
-# Your Project Title Here
+# Table of Contents
+<!--ts-->
+- [Dataset](#dataset)
+  * [Overview](#overview)
+  * [Task](#task)
+  * [Access](#access)
+- [Automated ML](#automated-ml)
+  * [Overview of AutoML Settings](#overview-of-automl-settings)
+  * [Results](#results)
+  * [RunDetails Widget](#rundetails-widget)
+  * [Best Model](#best-model)
+- [Hyperparameter Tuning](#hyperparameter-tuning)
+  * [Overview of Hyperparameter Tuning Settings](#overview-of-hyperparameter-tuning-settings)
+  * [Results](#results)
+  * [RunDetails Widget](#rundetails-widget)
+  * [Best Model](#best-model)
+- [Model Deployment](#model-deployment)
+  * [Overview of Deployed Model](#overview-of-deployed-model)
+  * [Endpoint](#endpoint)
+  * [Endpoint Query](#endpoint-query)  
+- [Screen Recording](#screen-recording)
+- [Suggestions to Improve](#suggestions-to-improve)
+ 
+<!--te-->  
 
 *TODO:* Write a short introduction to your project.
 
