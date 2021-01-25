@@ -34,7 +34,11 @@ In this project, I considered a regression problem, that is, a process where a m
   <li> Second, using HyperDrive, I adjusted the hyperparameters and applied the Random Forest Regressor which consists of a meta estimator that fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
   </li><br>
 </ol>
- 
+Hyperdrive and Automl models have been trained and deployed using an endpoint in Azure Machine Learning.
+
+The resolution of this problem is justified because educational indicators such as Ideb are desirable because they allow the monitoring of the country's education system. Its importance, in terms of diagnosis and guidance of political actions focused on improving the educational system, is in:
+- detect schools and / or education networks whose students are underperforming in terms of performance and proficiency;
+- monitor the temporal evolution of student performance in these schools and / or education networks.
 
 ## Project Set Up and Installation
 The starter files that you need to run this project are the following:
@@ -42,17 +46,23 @@ The starter files that you need to run this project are the following:
 - **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
 - **train.py**. Script used in Hyperdrive
 - **score.py**. Script used to deploy the model
-- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb), which occurred on the 15th
-September 2020 by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
+- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb) by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
 
 
 ## Dataset
 
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+The data were obtained from the 2019 School Census and released on September 15, 2020 by Inep, which can be found at <http://download.inep.gov.br/educacao_basica/portal_ideb/planilhas_para_download/2019/divulgacao_ensino_medio_municipios_2019.zip>.
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+Considering that Ideb was developed to be an indicator that synthesizes information from performance in standardized exams with information on school performance (average rate
+approval of students in the teaching stage), the features used to predict Basic Education Development Index were:
+- **automl.ipynb**: Jupyter Notebook to run the autoML experiment
+- **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
+- **train.py**. Script used in Hyperdrive
+- **score.py**. Script used to deploy the model
+- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb) by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
