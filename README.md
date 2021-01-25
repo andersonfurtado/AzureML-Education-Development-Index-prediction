@@ -1,4 +1,4 @@
-# Prediction of the Basic Education Development Index (Ideb) in Brazil with Azure Machine Learning
+# Prediction of the Basic Education Development Index (Ideb) of Brazil with Azure Machine Learning
 
 # Table of Contents
 <!--ts-->
