@@ -38,8 +38,6 @@ In this project, I considered a regression problem, that is, a process where a m
 
 ## Project Set Up and Installation
 The starter files that you need to run this project are the following:
-
-The starter files that you need to run this project are the following:
 - **automl.ipynb**: Jupyter Notebook to run the autoML experiment
 - **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
 - **train.py**. Script used in Hyperdrive
