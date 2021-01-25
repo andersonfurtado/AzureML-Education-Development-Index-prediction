@@ -44,9 +44,9 @@ The resolution of this problem is justified because educational indicators such 
 The starter files that you need to run this project are the following:
 - **automl.ipynb**: Jupyter Notebook to run the autoML experiment
 - **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
-- **train.py**. Script used in Hyperdrive
-- **score.py**. Script used to deploy the model
-- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb) by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
+- **train.py*: Script used in Hyperdrive
+- **score.py**: Script used to deploy the model
+- **ideb_dataset.csv**: The dataset prepared after the release of the Basic Education Development Index (Ideb) by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
 
 
 ## Dataset
@@ -58,11 +58,15 @@ The data were obtained from the 2019 School Census and released on September 15,
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
 Considering that Ideb was developed to be an indicator that synthesizes information from performance in standardized exams with information on school performance (average rate
 approval of students in the teaching stage), the features used to predict Basic Education Development Index were:
-- **automl.ipynb**: Jupyter Notebook to run the autoML experiment
-- **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
-- **train.py**. Script used in Hyperdrive
-- **score.py**. Script used to deploy the model
-- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb) by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
+- **Total Approval Rate (2019)**: Jupyter Notebook to run the autoML experiment
+- **1st Series Approval Rate (2019)**
+- **2nd Series Approval Rate (2019)**
+- **2nd Series Approval Rate (2019)**
+- **4th Grade Approval Rate (2019)**
+- **Grade SAEB Mathematics (2019)**
+- **Grade SAEB Language Portuguese (2019)**
+- **SAEB Standardized Average Score (N)**
+- **4th Grade Approval Rate (2019)**
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
