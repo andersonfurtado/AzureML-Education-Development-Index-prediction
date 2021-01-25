@@ -39,11 +39,14 @@ In this project, I considered a regression problem, that is, a process where a m
 ## Project Set Up and Installation
 The starter files that you need to run this project are the following:
 
-automl.ipynb: Jupyter Notebook to run the autoML experiment
-hyperparameter_tuning.ipynb: Jupyter Notebook to run the Hyperdrive experiment
-train.py. Script used in Hyperdrive
-score.py. Script used to deploy the model
-ideb_dataset.csv. The dataset
+The starter files that you need to run this project are the following:
+- **automl.ipynb**: Jupyter Notebook to run the autoML experiment
+- **hyperparameter_tuning.ipynb**: Jupyter Notebook to run the Hyperdrive experiment
+- **train.py**. Script used in Hyperdrive
+- **score.py**. Script used to deploy the model
+- **ideb_dataset.csv**. The dataset prepared after the release of the Basic Education Development Index (Ideb), which occurred on the 15th
+September 2020 by the National Institute for Educational Studies and Research Anísio Teixeira (Inep).
+
 
 ## Dataset
 
