@@ -1,3 +1,6 @@
+# ---------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# ---------------------------------------------------------
 import json
 import logging
 import os
@@ -15,7 +18,7 @@ from inference_schema.parameter_types.numpy_parameter_type import NumpyParameter
 from inference_schema.parameter_types.pandas_parameter_type import PandasParameterType
 
 
-input_sample = pd.DataFrame({"Sigla_UF": pd.Series(["example_value"], dtype="object"), "Cod_Municipio": pd.Series([0.0], dtype="float64"), "Nome_Municipio": pd.Series(["example_value"], dtype="object"), "Cod_Escola": pd.Series([0.0], dtype="float64"), "Nome_Escola": pd.Series(["example_value"], dtype="object"), "Column6": pd.Series(["example_value"], dtype="object"), "TAprov2019_Total": pd.Series([0.0], dtype="float64"), "TAprov2019_1_serie": pd.Series(["example_value"], dtype="object"), "TAprov2019_2_serie": pd.Series(["example_value"], dtype="object"), "TAprov2019_3_serie": pd.Series([0.0], dtype="float64"), "TAprov2019_4_serie": pd.Series(["example_value"], dtype="object"), "Indicador_Rendimento": pd.Series([0.0], dtype="float64"), "SAEB2019_Matematica": pd.Series([0.0], dtype="float64"), "SAEB2019_Lingua Portuguesa": pd.Series([0.0], dtype="float64"), "SAEB2019_Nota Media Padronizada": pd.Series([0.0], dtype="float64")})
+input_sample = pd.DataFrame({"TAprov2019_Total": pd.Series([0.0], dtype="float64"), "TAprov2019_1_serie": pd.Series([0.0], dtype="float64"), "TAprov2019_2_serie": pd.Series([0.0], dtype="float64"), "TAprov2019_3_serie": pd.Series([0.0], dtype="float64"), "TAprov2019_4_serie": pd.Series([0.0], dtype="float64"), "Indicador_Rendimento": pd.Series([0.0], dtype="float64"), "SAEB2019_Matematica": pd.Series([0.0], dtype="float64"), "SAEB2019_Lingua Portuguesa": pd.Series([0.0], dtype="float64"), "SAEB2019_Nota Media Padronizada": pd.Series([0.0], dtype="float64")})
 output_sample = np.array([0])
 try:
     log_server.enable_telemetry(INSTRUMENTATION_KEY)
