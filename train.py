@@ -18,9 +18,6 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 from azureml.core.run import Run
 
-
-
-
 run = Run.get_context()
 
 ideb_dataset = Dataset.Tabular.from_delimited_files("https://raw.githubusercontent.com/andersonfurtado/Capstone/master/data/data.CSV", separator=';', encoding= 'latin1')
@@ -61,7 +58,7 @@ def main():
                         help="The minimum number of samples required to be at a leaf node.")
 
 
-    #primary_metric_name='Accuracy'
+    #primary_metric_name='r2_score'
     args = parser.parse_args()
 
 
@@ -82,7 +79,8 @@ def main():
 
 # calculate r2 score
     y_pred = model.predict(x_test)
-    r2 = r2_score(y_true, y_pred) # Notice that my variable is named r2 to avoid confusion with the r2_score we imported
+    # Notice that my variable is named r2 to avoid confusion with the r2_score we imported
+    r2 = r2_score(y_test, y_pred) 
     run.log('r2_score', np.float(r2))
 
 # Save the trained model   
