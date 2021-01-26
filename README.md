@@ -111,6 +111,15 @@ The following screenshots shows the best run ID:
 ![automl_rundetails](./figs/automl_run_details.png)
 
 For a complete code overview, I refer to the jypter notebook automl.ipynb.
+We can perhaps improve the mean absolute error score by:
+
+choosing the more exhaustive Grid Sampling strategy,
+keeping, for example, the number of epochs fixed and tune the hyperparameter learning rate for the keras optimizer adam,
+choosing a different number of hidden layers, i.e. tune the number of hidden layers as well.
+
+- Try a different combination of values for hyperparameter tuning.
+- Change sampling technique: Instead of using random sampling you can also grid sampling.
+- Evaluate other classification models.
 
 ## Hyperparameter Tuning
 The objective of this project is to predict the Ideb per school at the Brazilian middle level. According to the data, the target variable "IDEB_2019" is a floating variable, which is a continuous variable ranging from 1.0, 1.6, 2.5, 3.5, 7.5 etc., therefore, it deals with yourself from a regression problem. In this case, then use regression models such as linear regression, random forest regression or any other regression model. Considering that in the classification model, I need to convert the target resource - "IDEB_2019" into a categorical resource with 1 or 0, not being suitable for the purpose of this project, it is evident that this is a `regression problem`.
@@ -225,6 +234,9 @@ Link to a screen recording of the project in action:
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+- Convert the model to ONNX format.
+- Deploy the model to the Edge using Azure IoT Edge.
+- Enable logging in the deployed web app.
 
 The model can be imporved by increasing the number of iterations and setting the featurization to be auto.Using neural network based classification to improve the performance of the model.
 
