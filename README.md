@@ -56,7 +56,6 @@ The starter files that you need to run this project are the following:
 The data were obtained from the 2019 School Census and released on September 15, 2020 by Inep, which can be found at <http://download.inep.gov.br/educacao_basica/portal_ideb/planilhas_para_download/2019/divulgacao_ensino_medio_municipios_2019.zip>.
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
 Considering that Ideb was developed to be an indicator that synthesizes information from performance in standardized exams with information on school performance (average rate
 approval of students in the teaching stage), the features used to predict Basic Education Development Index were:
 - **Total Approval Rate (2019)**: In the database called "TAprov2019 Total"
@@ -73,13 +72,9 @@ approval of students in the teaching stage), the features used to predict Basic 
 Initially, I explored the Ideb database repository on the Inep website to obtain a set of data to train the models. As soon as I decided to work with the Ideb 2019 data set by high school, I found the link to download the data. The link was then passed to the from_delimited_files method of the Tabular class object of the Dataset class object.
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
-
 To configure the Automated ML run we need to specify what kind of a task we are dealing with, the primary metric, train and validation data sets (which are in TabularDataset form) and the target column name. Featurization is set to "auto", meaning that the featurization step should be done automatically. 
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
-
 The best model overall was the `VotingEnsemble` model, with an R2 Score of 0.99787. The remainder of the models were between about 0.75571 and 0.99786, except VotingEnsemble.
 
 
@@ -143,7 +138,6 @@ For the hyperparameter adjustment experiment, done via HyperDrive, the types of 
 This contains the RunDetails implementation in the case of Hyperdrive run.
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
 The best model of HyperDrive run was VotingEnsemble with `0.99787 R2 Score`. This contains the `RunDetails` implementation of the the best model trained with it's parameters:
 ![hyperdrive_rundetails](./Images/hyperdrive_rundetails.png)
@@ -232,10 +226,6 @@ At the end, I delete the ACI deployment as well as the compute cluster.
 ## Screen Recording
 Link to a screen recording of the project in action:
 <https://youtu.be/P3DvZb5JbFE>
- Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
 
 ## Suggestions to Improve
 Some areas of improvement for future experiments are:
