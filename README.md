@@ -130,9 +130,9 @@ For the hyperparameter adjustment experiment, done via HyperDrive, the types of 
 
 * *primary_metric_goal*: This is the parameter which tells Hyperdrive how to optimise the algorithm using the primary_metric_name given. The goal can be anything from Maximize to Minimise the primary_metric_name. In this project, it is `PrimaryMetricGoal.MAXIMIZE`.
 
-* *max_total_runs*: This is the maximum number of runs which Hyperdrive will run using different hyperparameters. In this project, the max_total_runs is `20`.
+* *max_total_runs*: This is the maximum number of runs which Hyperdrive will run using different hyperparameters. In this project, the max_total_runs is `40`.
 
-* *max_concurrent_runs*: This is the maximum number of run which run concurrently over different threads. In this project, the max_concurrent_runs is `4`.
+* *max_concurrent_runs*: This is the maximum number of run which run concurrently over different threads. In this project, the max_concurrent_runs is `8`.
 
 * *hyperparameter_sampling*: This is the Parameter Sampler which specfies the techniques in which the hyperparameters are tuned. In this project, RandomParameterSampling was used to tune the hyperparameter '--max_depth' with `choice(range(1, 20)`, '--min_samples_split' with `choice(2, 5, 10, 15, 100)` and '--min_samples_leaf' with `choice(range(1, 10)`.
 
