@@ -227,8 +227,7 @@ The result returned is similar to the following:
 ```
 That is, a high school with the features described in `data {}` has the result of Ideb 6.903481911249511.
 
-At the end, I delete the ACI deployment as well as the compute cluster:
-![automl_rundetails](./figs/automl_run_details.png)
+At the end, I delete the ACI deployment as well as the compute cluster.
 
 ## Screen Recording
 Link to a screen recording of the project in action:
