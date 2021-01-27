@@ -110,7 +110,7 @@ The following screenshots shows the iteration
 
 The following screenshots shows the best run ID:
 
-![automl_bestmodel](./Images/aautoml_bestmodel.png)
+![automl_bestmodel](./Images/automl_bestmodel.png)
 
 For a complete code overview, I refer to the jypter notebook automl.ipynb.
 We can perhaps improve the mean absolute error score by:
@@ -231,7 +231,7 @@ At the end, I delete the ACI deployment as well as the compute cluster.
 
 ## Screen Recording
 Link to a screen recording of the project in action:
-<>
+<https://youtu.be/P3DvZb5JbFE>
  Remember that the screencast should demonstrate:
 - A working model
 - Demo of the deployed  model
