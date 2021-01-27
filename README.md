@@ -22,7 +22,6 @@
   * [Overview of Deployed Model](#overview-of-deployed-model)
   * [Endpoint](#endpoint)
   * [Endpoint Query](#endpoint-query)  
-- [Screen Recording](#screen-recording)
 - [Suggestions to Improve](#suggestions-to-improve)
 - [References](#references)
  
@@ -230,10 +229,6 @@ The result returned is similar to the following:
 That is, a high school with the features described in `data {}` has the result of Ideb 6.903481911249511.
 
 At the end, I delete the ACI deployment as well as the compute cluster.
-
-## Screen Recording
-Link to a screen recording of the project in action:
-<https://youtu.be/P3DvZb5JbFE>
 
 ## Suggestions to Improve
 Some areas of improvement for future experiments are:
