@@ -2,6 +2,8 @@
 
 # Table of Contents
 <!--ts-->
+- [Architecture Diagram](#ArchitectureDiagram)
+- [Project Set Up and Installation](#Project-Set-Up-and-Installation)
 - [Dataset](#dataset)
   * [Overview](#overview)
   * [Task](#task)
@@ -40,6 +42,12 @@ Hyperdrive and Automl models have been trained and deployed using an endpoint in
 The resolution of this problem is justified because educational indicators such as Ideb are desirable because they allow the monitoring of the country's education system. Its importance, in terms of diagnosis and guidance of political actions focused on improving the educational system, is in:
 - detect schools and / or education networks whose students are underperforming in terms of performance and proficiency;
 - monitor the temporal evolution of student performance in these schools and / or education networks.
+
+## Architecture Diagram
+
+This contains the `Architecture Diagram` of this project:
+
+![Architecture Diagram](./Images/ArchitectureDiagram.png)
 
 ## Project Set Up and Installation
 The starter files that you need to run this project are the following:
