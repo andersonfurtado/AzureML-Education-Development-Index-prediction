@@ -102,15 +102,15 @@ The AutoML run has the following parameters:
 
 This contains the `RunDetails` widget from the Jupyter notebook implementation in the case of AutoML run:
 
-![automl_rundetails](./images/automl_rundetails.png)
+![automl_rundetails](./Images/automl_rundetails.png)
 
 The following screenshots shows the iteration
 
-![automl_iteration](./images/automl_iteration.png)
+![automl_iteration](./Images/automl_iteration.png)
 
 The following screenshots shows the best run ID:
 
-![automl_bestrun](./images/automl_bestrun.png)
+![automl_bestrun](./Images/automl_bestrun.png)
 
 For a complete code overview, I refer to the jypter notebook automl.ipynb.
 We can perhaps improve the mean absolute error score by:
@@ -167,7 +167,7 @@ The AutoML generated `103` models among with the `VotingEnsemble` performed the 
 
 This contains the `Endpont` active:
 
-![endpoint](./images/endpoint.png)
+![endpoint](./Images/endpoint.png)
 
 The best model is deployed following this steps:
 
@@ -177,7 +177,7 @@ The best model is deployed following this steps:
 * *Choose a compute target*: The compute target you use to host your model will affect the cost and availability of your deployed endpoint. The compute target choose was an Azure Container Instance which included the scoring script;
 * *Deploy the model to the compute target*: Web services take one or more models, load them in an environment, and run them on one of several supported deployment targets. ; 
 * *Test the resulting web service*: After successful deployment, a REST endpoing with a scoring url was generated to be used for predictions as shown below:
-![automl_rundetails](./figs/automl_run_details.png)
+![REST_endpoint](./Images/REST_endpoint.png)
 
 After deploying the model as a web service, a REST API endpoint was created. You can send data to this endpoint and receive the forecast returned by the model. This example demonstrates how I used Python to call the created web service:
 
